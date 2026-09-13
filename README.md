@@ -191,7 +191,7 @@ The project applies relational database concepts, normalization techniques, and 
 | Product | Receives | Review |
 | Store | Sells | Product |
 
-:contentReference[oaicite:3]{index=3}
+
 
 ---
 

@@ -1,1 +1,52 @@
+CREATE TABLE Product (
+    Product_ID NUMBER PRIMARY KEY,
+    Product_Name VARCHAR2(100) NOT NULL,
+    Category_ID NUMBER,
+    Brand_ID NUMBER,
+    Frame_Type VARCHAR2(50),
+    Price NUMBER(10,2),
+    Stock NUMBER,
+    Power_Compatible VARCHAR2(10),
+
+    CONSTRAINT fk_product_category
+        FOREIGN KEY (Category_ID)
+        REFERENCES Category(Category_ID)
+);
+Table created.
+
+INSERT INTO Product
+VALUES (101, 'Eco Green Round Glasses', 1, 201, 'Round', 1499.00, 50, 'Yes');
+1 row created.
+  
+INSERT INTO Product
+VALUES (102, 'Bamboo Frame Spectacles', 2, 202, 'Rectangle', 1999.00, 35, 'Yes');
+1 row created.
+  
+INSERT INTO Product
+VALUES (103, 'Recycled Plastic Sunglasses', 3, 203, 'Wayfarer', 1299.00, 40, 'No');
+1 row created.
+  
+INSERT INTO Product
+VALUES (104, 'Wooden Finish Eyeglasses', 1, 204, 'Square', 2499.00, 25, 'Yes');
+1 row created.
+  
+INSERT INTO Product
+VALUES (105, 'Eco-Friendly Kids Glasses', 4, 205, 'Oval', 999.00, 60, 'Yes');
+1 row created.
+
+SELECT * FROM Product;
+
+PRODUCT_ID PRODUCT_NAME                   CATEGORY_ID BRAND_ID FRAME_TYPE PRICE   STOCK POWER_COMPATIBLE
+---------- ------------------------------ ----------- -------- ---------- ------- ----- ----------------
+101        Eco Green Round Glasses        1           201      Round      1499.00 50    Yes
+102        Bamboo Frame Spectacles        2           202      Rectangle  1999.00 35    Yes
+103        Recycled Plastic Sunglasses    3           203      Wayfarer   1299.00 40    No
+104        Wooden Finish Eyeglasses       1           204      Square     2499.00 25    Yes
+105        Eco-Friendly Kids Glasses      4           205      Oval        999.00 60    Yes
+
+5 rows selected.
+
+COMMIT;
+
+Commit complete.
 

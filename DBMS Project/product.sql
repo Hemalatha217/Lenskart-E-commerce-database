@@ -1,3 +1,5 @@
+-- Create Product Table
+
 CREATE TABLE Product (
     Product_ID NUMBER PRIMARY KEY,
     Product_Name VARCHAR2(100) NOT NULL,
@@ -10,39 +12,45 @@ CREATE TABLE Product (
 
     CONSTRAINT fk_product_category
         FOREIGN KEY (Category_ID)
-        REFERENCES Category(Category_ID)
+        REFERENCES Category(Category_ID),
+
+    CONSTRAINT fk_product_brand
+        FOREIGN KEY (Brand_ID)
+        REFERENCES Brand(Brand_ID)
 );
 Table created.
 
 INSERT INTO Product
-VALUES (101, 'Eco Green Round Glasses', 1, 201, 'Round', 1499.00, 50, 'Yes');
+VALUES (201, 'Classic Eyeglasses', 1, 101, 'Full Frame', 1200, 50, 'Yes');
+1 row created.
+
+INSERT INTO Product
+VALUES (202, 'Stylish Sunglasses', 2, 102, 'Rimless', 1500, 30, 'No');
 1 row created.
   
 INSERT INTO Product
-VALUES (102, 'Bamboo Frame Spectacles', 2, 202, 'Rectangle', 1999.00, 35, 'Yes');
+VALUES (203, 'Reading Glasses', 1, 103, 'Half Frame', 800, 45, 'Yes');
 1 row created.
   
 INSERT INTO Product
-VALUES (103, 'Recycled Plastic Sunglasses', 3, 203, 'Wayfarer', 1299.00, 40, 'No');
+VALUES (204, 'Contact Lenses', 3, 104, 'None', 1000, 25, 'Yes');
 1 row created.
   
 INSERT INTO Product
-VALUES (104, 'Wooden Finish Eyeglasses', 1, 204, 'Square', 2499.00, 25, 'Yes');
-1 row created.
-  
-INSERT INTO Product
-VALUES (105, 'Eco-Friendly Kids Glasses', 4, 205, 'Oval', 999.00, 60, 'Yes');
+VALUES (205, 'Blue Light Glasses', 1, 105, 'Full Frame', 1300, 60, 'Yes');
 1 row created.
 
 SELECT * FROM Product;
 
-PRODUCT_ID PRODUCT_NAME                   CATEGORY_ID BRAND_ID FRAME_TYPE PRICE   STOCK POWER_COMPATIBLE
----------- ------------------------------ ----------- -------- ---------- ------- ----- ----------------
-101        Eco Green Round Glasses        1           201      Round      1499.00 50    Yes
-102        Bamboo Frame Spectacles        2           202      Rectangle  1999.00 35    Yes
-103        Recycled Plastic Sunglasses    3           203      Wayfarer   1299.00 40    No
-104        Wooden Finish Eyeglasses       1           204      Square     2499.00 25    Yes
-105        Eco-Friendly Kids Glasses      4           205      Oval        999.00 60    Yes
+SQL> SELECT * FROM Product;
+
+PRODUCT_ID PRODUCT_NAME          CATEGORY_ID   BRAND_ID FRAME_TYPE     PRICE  STOCK POWER_COMPATIBLE
+---------- -------------------- ----------- ---------- ------------- ------ ------ ----------------
+       201 Classic Eyeglasses              1        101 Full Frame       1200     50 Yes
+       202 Stylish Sunglasses              2        102 Rimless          1500     30 No
+       203 Reading Glasses                 1        103 Half Frame        800     45 Yes
+       204 Contact Lenses                  3        104 None              1000     25 Yes
+       205 Blue Light Glasses              1        105 Full Frame       1300     60 Yes
 
 5 rows selected.
 

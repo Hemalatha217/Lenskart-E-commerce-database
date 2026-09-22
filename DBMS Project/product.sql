@@ -1,5 +1,3 @@
--- Create Product Table
-
 CREATE TABLE Product (
     Product_ID NUMBER PRIMARY KEY,
     Product_Name VARCHAR2(100) NOT NULL,

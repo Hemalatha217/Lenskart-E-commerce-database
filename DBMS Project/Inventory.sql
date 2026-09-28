@@ -5,15 +5,12 @@ CREATE TABLE Inventory (
     Seller_ID NUMBER,
     Quantity_Available NUMBER NOT NULL,
     Last_Updated DATE,
-
     CONSTRAINT fk_inventory_product
         FOREIGN KEY (Product_ID)
         REFERENCES Product(Product_ID),
-
     CONSTRAINT fk_inventory_store
         FOREIGN KEY (Store_ID)
         REFERENCES Store(Store_ID),
-
     CONSTRAINT fk_inventory_seller
         FOREIGN KEY (Seller_ID)
         REFERENCES Seller(Seller_ID)
